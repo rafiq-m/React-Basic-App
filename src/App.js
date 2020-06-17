@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+function App({name, age}) {
+ 
+const changeLit = () => {
+  setlit(!islit);
+}
+
+  const [islit, setlit] = useState(true);
+
+  return <div class = "App"><p>
+  this room is {islit ? "lit" : "dark"}
+   Hello world {name}, {age}</p>
+   <button onClick = {changeLit}>Toggle Lit</button>
+   </div>
 }
 
 export default App;
