@@ -3,14 +3,17 @@ import { useState } from 'react';
 import './App.css';
 import Parent from './Parent';
 import context from './context';
+import ValueContext from './ValueContext';
 
 
 
 function App({ name, age }) {
 
   const [islit, setlit] = useState(true);
+  let value2 = useState(48);
   let value = 81
   return(
+    <ValueContext.Provider value = {value2}>
     <context.Provider value = {value}>
     <div className="App">
     <p>
@@ -25,6 +28,7 @@ function App({ name, age }) {
     <Parent></Parent>
     </div>
   </context.Provider>
+  </ValueContext.Provider>
   );
 }
 
