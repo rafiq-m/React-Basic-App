@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 import valueContext from "./ValueContext"
+import Child2 from "./Child2"
 
 
 
-function Parent() {
+function Child() {
     let val = React.useContext(valueContext);
     return (
         <div>
@@ -12,8 +13,9 @@ function Parent() {
         <button onClick = {() =>{
             val[1](++val[0]);
         }}>Toggle Child</button>
+        <Child2></Child2>
         </div>
     );
 }
 
-export default Parent;
+export default Child;
